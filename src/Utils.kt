@@ -19,3 +19,10 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
  * The cleaner shorthand for printing output.
  */
 fun Any?.println() = println(this)
+
+/**
+ * Takes a string full of shit, and filters the numbers out of it.
+ */
+fun String.toSingleDigitList() = map {
+    "$it".toIntOrNull()
+}.filterNotNull()
